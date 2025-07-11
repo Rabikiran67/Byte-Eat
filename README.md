@@ -7,6 +7,10 @@ ByteEat is a modern, full-stack web application that streamlines the restaurant 
 
 ## 📸 App Screenshots
 
+| Landing Page |
+|-------------|
+| ![Landing Page](./public/screenshots/landing-page.png) |
+
 | Home Page | Menu Page |
 |-----------|-----------|
 | ![Home](./public/screenshots/home.png) | ![Menu](./public/screenshots/menu.png) |
