@@ -1,5 +1,6 @@
 
 # ByteEat 🍕 – Smart Restaurant Ordering
+ByteEat is a modern, full-stack web application that streamlines the restaurant ordering process. Users can scan a QR code, browse a visually rich menu, customize items, manage their cart, and enjoy a seamless checkout—all with a beautiful, responsive, and performant UI.
 
 [![Live Website](https://img.shields.io/badge/Live%20Site-byte--eat.vercel.app-brightgreen?style=for-the-badge&logo=vercel)](https://byte-eat.vercel.app/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge&logo=github)](https://github.com/Rabikiran67/Byte-Eat)
@@ -14,7 +15,6 @@
 |------------|----------------|
 | ![Empty Cart](./public/screenshots/cart-empty.png) | ![Cart](./public/screenshots/cart.png) |
 
-ByteEat is a modern, full-stack web application that streamlines the restaurant ordering process. Users can scan a QR code, browse a visually rich menu, customize items, manage their cart, and enjoy a seamless checkout—all with a beautiful, responsive, and performant UI.
 
 ---
 
