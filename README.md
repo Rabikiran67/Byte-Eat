@@ -42,7 +42,6 @@ ByteEat is a modern, full-stack web application that streamlines the restaurant 
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **State Management:** React Context API + [immer](https://immerjs.github.io/immer/)
 - **TypeScript:** Full type safety
-- **AI Integration (future):** [Genkit](https://firebase.google.com/docs/genkit)
 
 ---
 
