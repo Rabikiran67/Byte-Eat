@@ -102,7 +102,6 @@ ByteEat features a custom, animated pizza-slice spinner for a delightful, brande
 
 ## ☁️ Deployment
 - **Vercel:** Recommended for Next.js (connect your repo, deploy instantly)
-- **Firebase App Hosting:** Supported
 
 ---
 
