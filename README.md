@@ -97,10 +97,6 @@ ByteEat features a custom, animated pizza-slice spinner for a delightful, brande
 - `npm run dev` – Start the dev server
 - `npm run build` – Build for production
 - `npm run start` – Start the production server
-- `npm run lint` – Lint the codebase
-- `npm run typecheck` – TypeScript type checking
-- `npm run genkit:dev` – Start Genkit AI dev server
-- `npm run genkit:watch` – Genkit AI dev server with watch
 
 ---
 
