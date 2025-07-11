@@ -2,7 +2,7 @@
 "use client";
 
 import CartItemCard from '@/components/cart/CartItemCard';
-import { useCartStore } from '@/hooks/useCartStore.tsx';
+import { useCartStore } from '@/hooks/useCartStore';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -54,7 +54,7 @@ export default function CartPage() {
           Looks like you haven't added any items to your cart yet.
         </p>
         <Link href="/menu" passHref>
-          <Button size="lg" className="shadow-lg text-sm sm:text-base">
+          <Button className="shadow-lg text-sm sm:text-base">
             <ArrowLeft className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             Start Ordering
           </Button>
@@ -115,7 +115,6 @@ export default function CartPage() {
           </CardContent>
           <CardFooter className="flex flex-col gap-2 sm:gap-3 p-4 sm:p-6 pt-2 sm:pt-4">
             <Button 
-              size="lg" 
               className="w-full shadow-md hover:shadow-primary/30 transition-shadow text-sm sm:text-base"
               onClick={handleProceedToCheckout}
             >
@@ -123,14 +122,13 @@ export default function CartPage() {
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
             <Button
-              variant="outline"
+              className="w-full bg-destructive text-destructive-foreground shadow-md hover:bg-destructive/90 hover:shadow-destructive/30 transition-shadow text-sm sm:text-base"
               onClick={clearCart}
-              className="w-full text-destructive hover:border-destructive hover:bg-destructive/5 text-sm sm:text-base"
             >
               <Trash2 className="mr-2 h-3 w-3 sm:h-4 sm:w-4" /> Clear Cart
             </Button>
             <Link href="/menu" passHref className="w-full">
-               <Button variant="ghost" className="w-full text-accent hover:text-accent/80 text-sm sm:text-base">
+               <Button className="w-full bg-accent text-accent-foreground shadow-md hover:bg-accent/90 hover:shadow-accent/30 transition-shadow text-sm sm:text-base">
                 <ArrowLeft className="mr-2 h-3 w-3 sm:h-4 sm:w-4" /> Continue Shopping
               </Button>
             </Link>

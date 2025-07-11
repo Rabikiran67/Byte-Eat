@@ -1,100 +1,114 @@
 
-# ByteEat - Smart Restaurant Ordering
+# ByteEat 🍕 – Smart Restaurant Ordering
 
-ByteEat is a modern web application designed to streamline the restaurant ordering process. Users can scan a QR code (simulated), browse the menu, customize their items, add them to a cart, and proceed through a simulated checkout and payment process.
+[![Live Website](https://img.shields.io/badge/Live%20Site-byte--eat.vercel.app-brightgreen?style=for-the-badge&logo=vercel)](https://byte-eat.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge&logo=github)](https://github.com/Rabikiran67/Byte-Eat)
 
-## ✨ Features
-
-*   **Interactive Menu:** Browse food items categorized for easy navigation.
-*   **Search & Filter:** Quickly find menu items by name or category.
-*   **Item Customization:** Select options for menu items (e.g., size, toppings) with dynamic price updates.
-*   **Shopping Cart:** Add/remove items, update quantities, and view a summary of the order.
-*   **Table Number Input:** Users specify their table number before checkout.
-*   **Simulated Checkout:** A mock payment process to simulate a real-world transaction.
-*   **Order Confirmation:** Displays a summary of the placed order.
-*   **Review Submission:** Allows users to leave feedback after their order (simulated).
-*   **Responsive Design:** Optimized for a seamless experience on both desktop and mobile devices.
-
-## 🛠️ Tech Stack
-
-*   **Framework:** [Next.js](https://nextjs.org/) (with App Router)
-*   **UI Library:** [React](https://react.dev/)
-*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-*   **UI Components:** [ShadCN UI](https://ui.shadcn.com/)
-*   **AI Integration (Backend/Flows):** [Genkit](https://firebase.google.com/docs/genkit) (for potential future AI features)
-*   **Language:** [TypeScript](https://www.typescriptlang.org/)
-*   **State Management (Cart):** React Context API with `immer`
-*   **Form Handling:** `react-hook-form` (though not extensively used in current public-facing forms)
-*   **Icons:** [Lucide React](https://lucide.dev/)
-
-## 🚀 Getting Started
-
-To get a local copy up and running, follow these simple steps.
-
-### Prerequisites
-
-*   Node.js (v18 or later recommended)
-*   npm (or yarn)
-
-### Installation
-
-1.  **Clone the repository (if you have it on GitHub):**
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
-    cd YOUR_REPOSITORY_NAME
-    ```
-    Alternatively, if you've downloaded the project files, navigate to the project's root directory.
-
-2.  **Install NPM packages:**
-    ```bash
-    npm install
-    ```
-
-### Running the Development Server
-
-Once the dependencies are installed, you can start the Next.js development server:
-
-```bash
-npm run dev
-```
-
-This will start the application, typically on `http://localhost:9002` (as configured in `package.json`). Open this URL in your browser to see the app.
-
-The Genkit development server (if you plan to work on AI flows) can be started separately:
-
-```bash
-npm run genkit:dev
-```
-
-## 📜 Available Scripts
-
-In the project directory, you can run:
-
-*   `npm run dev`: Runs the app in development mode with Turbopack.
-*   `npm run build`: Builds the app for production.
-*   `npm run start`: Starts the production server (after building).
-*   `npm run lint`: Lints the project files using Next.js's built-in ESLint configuration.
-*   `npm run typecheck`: Runs TypeScript to check for type errors.
-*   `npm run genkit:dev`: Starts the Genkit development server.
-*   `npm run genkit:watch`: Starts the Genkit development server with watch mode.
-
-## ☁️ Deployment
-
-This Next.js application is well-suited for deployment on platforms like:
-
-*   **Vercel:** (Recommended) Offers seamless deployment for Next.js projects. Simply connect your GitHub repository to Vercel.
-*   **Firebase App Hosting:** Can also be configured for deployment.
-
-Ensure any necessary environment variables are set up on your deployment platform.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## 📄 License
-
-This project is licensed - see the LICENSE.md file for details (if one is added). For now, assume it's proprietary or specify your license.
+ByteEat is a modern, full-stack web application that streamlines the restaurant ordering process. Users can scan a QR code, browse a visually rich menu, customize items, manage their cart, and enjoy a seamless checkout—all with a beautiful, responsive, and performant UI.
 
 ---
 
-Enjoy using ByteEat!
+## ✨ Features
+
+- **Interactive Menu:** Browse categorized food items with images, descriptions, and customizations.
+- **Food-Themed Loading Spinner:** Enjoy a unique, animated pizza-slice spinner on every page load and route transition for a delightful, branded experience.
+- **Global & Per-Page Loading:** Smooth loading overlays appear globally and on key pages, ensuring users always know when content is loading.
+- **Cart Management:** Add, remove, and update items in a persistent cart (localStorage-backed).
+- **Table Number Input:** Specify your table before checkout for a real-world restaurant feel.
+- **Simulated Checkout & Confirmation:** Experience a mock payment and order summary flow.
+- **Review Submission:** Leave feedback after your order (simulated).
+- **Dark Mode:** Modern dark mode UI, defaulting to dark for a premium look.
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop.
+- **Admin Panel:** (Optional) Admin login for QR code generation and management.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router, server/client components)
+- **UI Library:** [React](https://react.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) with custom animations
+- **UI Components:** [ShadCN UI](https://ui.shadcn.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **State Management:** React Context API + [immer](https://immerjs.github.io/immer/)
+- **TypeScript:** Full type safety
+- **AI Integration (future):** [Genkit](https://firebase.google.com/docs/genkit)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or later recommended)
+- npm (or yarn)
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Rabikiran67/Byte-Eat.git
+   cd Byte-Eat
+   ```
+   Or download and navigate to the project root.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+```bash
+npm run dev
+```
+Visit [http://localhost:9002](http://localhost:9002) in your browser.
+
+---
+
+## 🍕 Custom Food-Themed Loading Spinner
+
+ByteEat features a custom, animated pizza-slice spinner for a delightful, branded loading experience. This spinner appears:
+- **Globally:** On initial load and every route transition (see `src/components/layout/GlobalLoadingOverlay.tsx`).
+- **Per-Page:** On key pages via `loading.tsx` files (e.g., `src/app/menu/loading.tsx`).
+
+**How it works:**
+- The spinner is a React SVG component (`src/components/ui/FoodSpinner.tsx`) with smooth, custom CSS animation (`animate-spin-slow` in `globals.css`).
+- The global overlay is a client component that detects route changes and overlays the spinner with a subtle dark background and blur.
+- All animations are handled via Tailwind CSS and global CSS for maximum performance and SSR compatibility.
+
+---
+
+## 🖌️ UI/UX Polish & Performance
+- **Modern, accessible design** with Tailwind and ShadCN UI.
+- **Custom animations** for loading, cards, and backgrounds (see `globals.css`).
+- **Persistent cart** using localStorage.
+- **Optimized images** and lazy loading for fast LCP.
+- **No hydration mismatches:** All client/server boundaries are respected for smooth SSR/CSR.
+
+---
+
+## 📜 Available Scripts
+- `npm run dev` – Start the dev server
+- `npm run build` – Build for production
+- `npm run start` – Start the production server
+- `npm run lint` – Lint the codebase
+- `npm run typecheck` – TypeScript type checking
+- `npm run genkit:dev` – Start Genkit AI dev server
+- `npm run genkit:watch` – Genkit AI dev server with watch
+
+---
+
+## ☁️ Deployment
+- **Vercel:** Recommended for Next.js (connect your repo, deploy instantly)
+- **Firebase App Hosting:** Supported
+
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Please open an issue or PR.
+
+---
+
+## 📄 License
+This project is licensed—see LICENSE.md (if present) or contact the author for details.
+
+---
+
+Enjoy using ByteEat! 🍽️

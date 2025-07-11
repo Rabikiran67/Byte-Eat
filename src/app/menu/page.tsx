@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useState, useMemo } from 'react';
 import { Search, Filter } from 'lucide-react';
+import LazyComponent from '@/components/lazy/LazyComponent';
 
 export default function MenuPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -109,9 +110,16 @@ export default function MenuPage() {
               <h2 className="text-2xl sm:text-3xl font-semibold font-headline text-accent border-b-2 border-accent/30 pb-1 sm:pb-2 capitalize">
                 {categoryName}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {itemsForThisCategory.map((item: MenuItemType) => (
-                  <MenuItemCard key={item.id} item={item} />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch">
+                {itemsForThisCategory.map((item: MenuItemType, index: number) => (
+                  <LazyComponent 
+                    key={item.id} 
+                    threshold={0.1}
+                    rootMargin="100px 0px"
+                    height="400px"
+                  >
+                    <MenuItemCard item={item} priority={index === 0} />
+                  </LazyComponent>
                 ))}
               </div>
             </div>

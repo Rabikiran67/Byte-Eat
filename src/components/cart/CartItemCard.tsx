@@ -2,11 +2,11 @@
 "use client";
 
 import type { CartItemType } from '@/types';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Minus, Plus, Trash2 } from 'lucide-react';
-import { useCartStore } from '@/hooks/useCartStore.tsx';
+import { useCartStore } from '@/hooks/useCartStore';
+import LazyImage from '@/components/lazy/LazyImage';
 
 interface CartItemCardProps {
   item: CartItemType;
@@ -23,12 +23,12 @@ export default function CartItemCard({ item }: CartItemCardProps) {
 
   return (
     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 p-2 sm:p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
-      <Image
+      <LazyImage
         src={item.imageUrl}
         alt={item.name}
-        width={64} // 16 * 4
-        height={64} // 16 * 4
-        className="rounded-md object-cover w-full h-32 sm:w-20 sm:h-20 self-center sm:self-auto" // Full width on mobile stacked, fixed on larger
+        width={64}
+        height={64}
+        className="rounded-md object-cover w-full h-32 sm:w-20 sm:h-20 self-center sm:self-auto"
         data-ai-hint={item.dataAiHint || "food item"}
       />
       <div className="flex-grow py-1 sm:py-0">
@@ -50,12 +50,10 @@ export default function CartItemCard({ item }: CartItemCardProps) {
       <div className="flex items-center justify-between sm:justify-start gap-1 sm:gap-2 mt-2 sm:mt-0">
         <div className="flex items-center gap-1">
           <Button
-            variant="outline"
-            size="icon"
             onClick={() => handleQuantityChange(item.quantity - 1)}
             aria-label={`Decrease quantity of ${item.name}`}
             disabled={item.quantity <= 1}
-            className="h-8 w-8 sm:h-9 sm:w-9"
+            className="h-8 w-8 sm:h-9 sm:w-9 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
           >
             <Minus className="h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
@@ -68,11 +66,9 @@ export default function CartItemCard({ item }: CartItemCardProps) {
             min="1"
           />
           <Button
-            variant="outline"
-            size="icon"
             onClick={() => handleQuantityChange(item.quantity + 1)}
             aria-label={`Increase quantity of ${item.name}`}
-            className="h-8 w-8 sm:h-9 sm:w-9"
+            className="h-8 w-8 sm:h-9 sm:w-9 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
           >
             <Plus className="h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
@@ -81,8 +77,6 @@ export default function CartItemCard({ item }: CartItemCardProps) {
           ₹{(item.finalPrice * item.quantity).toFixed(0)}
         </p>
         <Button
-          variant="ghost"
-          size="icon"
           className="text-destructive hover:bg-destructive/10 h-8 w-8 sm:h-9 sm:w-9 ml-1 sm:ml-2"
           onClick={() => removeFromCart(item.id, customizationSignature)}
           aria-label={`Remove ${item.name} from cart`}

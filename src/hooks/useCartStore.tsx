@@ -4,7 +4,7 @@
 import type { CartItemType, MenuItemType, SelectedCustomization } from '@/types';
 import { produce } from 'immer';
 import type { ReactNode } from 'react';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 interface CartState {
   items: CartItemType[];
@@ -19,8 +19,45 @@ interface CartState {
 
 const CartContext = createContext<CartState | undefined>(undefined);
 
+const CART_STORAGE_KEY = 'byteeat-cart';
+
+const saveCartToStorage = (items: CartItemType[]) => {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+  } catch (error) {
+    console.error('Failed to save cart to localStorage:', error);
+  }
+};
+
+const loadCartFromStorage = (): CartItemType[] => {
+  if (typeof window === 'undefined') return [];
+  try {
+    const stored = localStorage.getItem(CART_STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
+  } catch (error) {
+    console.error('Failed to load cart from localStorage:', error);
+    return [];
+  }
+};
+
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<CartItemType[]>([]);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const savedItems = loadCartFromStorage();
+    setItems(savedItems);
+    setIsInitialized(true);
+  }, []);
+
+  // Save cart to localStorage whenever items change
+  useEffect(() => {
+    if (isInitialized) {
+      saveCartToStorage(items);
+    }
+  }, [items, isInitialized]);
 
   const generateCustomizationSignature = (customizations?: SelectedCustomization[]): string => {
     if (!customizations || customizations.length === 0) return 'default';

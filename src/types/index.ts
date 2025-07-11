@@ -19,6 +19,7 @@ export interface MenuItemType {
   price: number;
   imageUrl: string;
   category: string;
+  subcategory?: string;
   customizationOptions?: CustomizationOption[];
   dataAiHint?: string;
 }

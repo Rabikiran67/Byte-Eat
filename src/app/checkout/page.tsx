@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useCartStore } from '@/hooks/useCartStore.tsx';
+import { useCartStore } from '@/hooks/useCartStore';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
